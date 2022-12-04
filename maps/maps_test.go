@@ -1,6 +1,10 @@
 package maps
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestKeys(t *testing.T) {
 	t.Run("integers", func(t *testing.T) {
@@ -9,6 +13,6 @@ func TestKeys(t *testing.T) {
 			2: 3.5,
 		})
 
-		_ = ks
+		assert.ElementsMatch(t, ks, []int{1, 2})
 	})
 }
