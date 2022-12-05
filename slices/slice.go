@@ -25,3 +25,15 @@ func Exists[T comparable](slice []T, elem T) bool {
 
 	return false
 }
+
+// Index returns the index of the first occurrence of elem in slice.
+// If elem is not found, then -1 is returned.
+func Index[T comparable](slice []T, elem T) int {
+	for i, e := range slice {
+		if e == elem {
+			return i
+		}
+	}
+
+	return -1
+}
